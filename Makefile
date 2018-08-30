@@ -15,10 +15,10 @@ help: ## Display help.
 
 .PHONY: image
 image: ## Build docker image
-	@echo -e "\nBuilding image: $(BUILD_TAG)\n"
+	@echo "Building image: $(BUILD_TAG)"
 	@docker build --pull -t $(BUILD_TAG) .
 
 .PHONY: push
 push: image ## Push docker image
-	@echo "\nPushing image: $(BUILD_TAG)\n"
+	@echo "Pushing image: $(BUILD_TAG)"
 	@docker push $(BUILD_TAG)
